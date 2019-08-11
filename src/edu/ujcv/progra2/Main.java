@@ -73,6 +73,14 @@ public class Main {
                         System.out.println("RTN: " + RTN);
                         System.out.println("Cajero: Andrew Escobar");
                         Pila.MostrarProductos();
+                        System.out.println("Subtotal");
+                        System.out.println("Impuestos total 15%");
+                        System.out.println("Total");
+                        System.out.println("Total en Dolares");
+                        System.out.println("");
+                        System.out.println("Copia: Obligado tributario emisor");
+                        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                        System.out.println(" - Cuenta Cerrada -");
 
 
                     } else {
@@ -90,6 +98,14 @@ public class Main {
                         System.out.println("RTN: ND");
                         System.out.println("Cajero: Andrew Escobar");
                         Pila.MostrarProductos();
+                        System.out.println("Subtotal");
+                        System.out.println("Impuestos total 15%");
+                        System.out.println("Total");
+                        System.out.println("Total en Dolares");
+                        System.out.println("");
+                        System.out.println("Copia: Obligado tributario emisor");
+                        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                        System.out.println(" - Cuenta Cerrada -");
 
                     }
                     break;
@@ -98,4 +114,6 @@ public class Main {
 
         } while (opcion != 5);
 
-    }}
+    }
+
+}
