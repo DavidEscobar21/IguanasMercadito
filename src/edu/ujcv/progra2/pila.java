@@ -34,7 +34,7 @@ public class pila {
             recorrido = recorrido.siguiente;
         }
         System.out.println(lista);
-        lista = "" ;
+        lista = "";
 
     }
 }
