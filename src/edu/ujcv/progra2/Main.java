@@ -16,12 +16,12 @@ public class Main {
             System.out.println("Ingrese una opcion");
             System.out.println("");
             System.out.println("1. Agregar Producto");
-            System.out.println("2. Eliminar el ultimo capitulo");
+            System.out.println("2. Eliminar el ultimo Articulo agregado");
             System.out.println("3. Mostrar Productos");
-            System.out.println("4. Facturar");
-            System.out.println("5. Salir");
-            System.out.println("");
-            opcion = sc.nextInt();
+            System.out.println("4. Eliminar lista");
+            System.out.println("5. Facturar");
+            System.out.print("6. Salir");
+            opcion = leerEntero(sc, "", "Ha ingresado un caracter no valido");
 
             switch (opcion) {
                 case 1:
@@ -37,8 +37,8 @@ public class Main {
                     System.out.println("7. Papas   ..... 000007 ...... 18 LPS");
                     System.out.println("8. Tomate  ..... 000008 ...... 5 LPS");
                     System.out.println("9. Manzanas .... 000009 ...... 12 LPS");
-                    System.out.println("10. Uvas ....... 000010 ...... 56 LPS");
-                    Pila.IngreseProducto(sc.nextInt());
+                    System.out.print("10. Uvas ....... 000010 ...... 56 LPS");
+                    Pila.IngreseProducto(leerEntero(sc, "", "Ha ingresado un caracter no valido"));
                     break;
                 case 2:
                     Pila.Eliminar_Producto();
@@ -48,16 +48,17 @@ public class Main {
                     Pila.MostrarProductos();
                     break;
                 case 4:
+                    Pila.EliminarProductos();
+                    break;
+                case 5:
                     System.out.println("Desea poner nombre y RTN?");
                     System.out.println("1. SI");
-                    System.out.println("2. NO");
-                    int y = sc.nextInt();
+                    System.out.print("2. NO");
+                    int y = leerEntero(sc, "", "Ha ingresado un caracter no valido");
                     if (y == 1) {
                         System.out.println("ingrese su nombre");
-                        sc.nextLine();
                         String nombre = sc.nextLine();
-                        System.out.println("ingrese su RTN");
-                        int RTN = sc.nextInt();
+                        int RTN = leerEntero(sc, "ingrese su RTN", "Ha ingresado un caracter no valido");
 
                         System.out.println("            FACTURA            ");
                         System.out.println("-------------------------------");
@@ -81,6 +82,7 @@ public class Main {
                         System.out.println("Copia: Obligado tributario emisor");
                         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                         System.out.println(" - Cuenta Cerrada -");
+                        System.out.println("");
 
 
                     } else {
@@ -106,14 +108,25 @@ public class Main {
                         System.out.println("Copia: Obligado tributario emisor");
                         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                         System.out.println(" - Cuenta Cerrada -");
-
+                        System.out.println("");
                     }
                     break;
             }
 
 
-        } while (opcion != 5);
+        } while (opcion != 6);
 
     }
 
+    public static int leerEntero(Scanner sc,String mensaje, String mensajeError) {
+        int retval = 0;
+        System.out.println(mensaje);
+        while (!sc.hasNextInt()) {
+            sc.nextLine();
+            System.out.println(mensajeError);
+        }
+        retval = sc.nextInt();
+        sc.nextLine();
+        return retval;
+    }
 }

@@ -37,4 +37,15 @@ public class pila {
         lista = "";
 
     }
+    public boolean ProductoEliminado(){
+        return UltimoProductoIngresado == null;
+    }
+public void EliminarProductos(){
+while (!(ProductoEliminado())){
+    Eliminar_Producto();
+
+}
+
+}
+
 }
